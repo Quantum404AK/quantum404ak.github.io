@@ -7,11 +7,30 @@ body {
     background: #f4f4f9;
     color: #333;
 }
+.title_hyperlink,
+.title_hyperlink:link,
+.title_hyperlink:visited,
+.title_hyperlink:hover,
+.title_hyperlink:active {
+  color: inherit;
+  text-decoration: none;
+}
+.title_text {
+	margin: 0px;
+}
+.title_logo {
+    display: inline-flex;
+    align-items: center;
+  }
+.title_logo img {
+    width: 75px;
+    height: auto;
+    margin: 0 8px;
+  }
 header {
     background: #222;
     color: #fff;
     padding: 20px;
-    text-align: center;
 }
 header h1 {
     margin: 0;
