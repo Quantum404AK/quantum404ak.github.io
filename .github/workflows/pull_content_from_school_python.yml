@@ -23,3 +23,4 @@ jobs:
           commit-username: github-actions
           commit-email: ${{ github.actor }}@users.noreply.github.com
           commit-message: "Automated copy from ORIGIN_COMMIT"
+          api-token: ${{ secrets.API_TOKEN_GITHUB }}
