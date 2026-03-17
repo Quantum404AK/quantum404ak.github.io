@@ -1,3 +1,4 @@
+/*
 body {
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
@@ -52,6 +53,21 @@ h2 {
     border-bottom: 2px solid #30363D;
     padding-bottom: 10px;
 }
+.skill_tiles {
+	display:flex;
+	gap: 20px;
+}
+.skill_tile {
+	padding: 15px;
+	border-radius: 8px;
+  border-color: #C75136;
+  border-width: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill_tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px #A5D6FF;
+}
 .projects {
   display: flex;
   gap: 20px;
@@ -59,8 +75,10 @@ h2 {
 
 .project {
   background: #F78166;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
+  border-color: #C75136;
+  border-width: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
@@ -68,11 +86,12 @@ h2 {
 .project h3 {
   margin-bottom: 10px;
   color: #333;
-  font-size: 23px;
+  font-size: 25px;
 }
 
 .project p {
   color: #555;
+  font-weight: bold;
 }
 
 .project a {
@@ -85,7 +104,7 @@ h2 {
 }
 
 .project:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: 0 8px 20px #A5D6FF;
 }
 
@@ -133,6 +152,195 @@ footer {
     padding: 20px;
     margin-top: 40px;
 }
-a {
-    color: #0077cc;
+/*New code below*/
+body {
+  font-family: "Source Code Pro", monospace;
+  margin: 0;
+  padding: 0;
+  background: #0D1117;
+  color: #C9D1D9;
+}
+
+/* Header */
+header {
+  background: #161B22;
+  color: #FFFFFF;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.title {
+	display: flex;
+}
+.title span{
+	display: inline-flex;
+    align-items: center;
+  }
+.title a,
+.title a:link,
+.title a:visited,
+.title a:hover,
+.title a:active {
+  color: inherit;
+  text-decoration: none;
+}
+.title p {
+	margin: 0px;
+}
+.title img {
+    width: 75px;
+    height: auto;
+    margin: 0 8px;
+  }
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #58A6FF;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #F78166;
+}
+
+/* Sections */
+section {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  border-bottom: 2px solid #30363D;
+  padding-bottom: 10px;
+  color: #58A6FF;
+}
+
+/* Skills */
+.skill_tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.skill_tile {
+  background: #21262D;
+  color: #C9D1D9;
+  width: 280px;
+  min-height: 220px;   /* ensures a minimum size */
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #58A6FF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 280px;
+  box-sizing: border-box; /* prevents overflow */
+}
+
+.skill_tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px #58A6FF;
+}
+
+.skill_tile h3 {
+  margin-top: 0;
+  color: #F78166;
+}
+*/
+/* Projects */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.project {
+  background: #21262D;
+  color: #C9D1D9;
+  width: 280px;
+  min-height: 220px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #58A6FF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  flex: 1 1 280px;
+  box-sizing: border-box;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px #58A6FF;
+}
+
+.project h3 {
+  margin-bottom: 10px;
+  color: #F78166;
+  font-size: 22px;
+}
+
+.project p {
+  font-size: 14px;
+  color: #C9D1D9;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #58A6FF;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project a:hover {
+  color: #F78166;
+}
+.project-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn {
+  background: #0077cc;
+  color: #fff;
+}
+
+.btn span{
+	display: inline-flex;
+    align-items: center;
+  }
+  
+.btn img {
+	padding-right: 10px;
+	height: 24px;
+}
+
+.btn:hover {
+  background: #005fa3;
+  transform: scale(1.05);
+}
+footer {
+	padding: 20px;
+    margin-top: 40px;
 }
