@@ -175,7 +175,7 @@ header {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 }
 
@@ -212,6 +212,7 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   margin-left: auto;
+  font-size: 18px;
 }
 
 @media (max-width: 450px) {
