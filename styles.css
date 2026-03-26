@@ -397,7 +397,6 @@ h2 {
 
 .btn img {
   padding-right: 10px;
-  height: 24px;
 }
 
 .btn:hover {
@@ -417,17 +416,15 @@ footer {
 /* Contact */
 .contact-grid {
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   gap: 20px;
   justify-content: flex-start;
   margin-top: 20px;
 }
 
 .contact-card {
-  background: #21262D;
-  border: 2px solid #58A6FF;
-  border-radius: 8px;
-  padding: 24px 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
   text-decoration: none;
   color: #C9D1D9;
   flex: 1 1 160px;
@@ -440,18 +437,15 @@ footer {
 
 .contact-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px #58A6FF;
-  border-color: #F78166;
+  /*box-shadow: 0 4px 10px #58A6FF;*/
 }
 
-.contact-icon {
-  font-size: 36px;
-  margin-bottom: 10px;
-  line-height: 1;
+.contact-card img {
+	padding-bottom: 10px;
 }
 
 .contact-label {
-  font-size: 13px;
+  font-size: 26px;
   font-weight: 700;
   color: #F78166;
   margin-bottom: 6px;
@@ -460,7 +454,7 @@ footer {
 }
 
 .contact-value {
-  font-size: 12px;
+  font-size: 15px;
   color: #8B949E;
   word-break: break-all;
 }
