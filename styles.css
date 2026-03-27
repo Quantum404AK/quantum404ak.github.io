@@ -416,15 +416,15 @@ footer {
 /* Contact */
 .contact-grid {
   display: flex;
-  /*flex-wrap: wrap;*/
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: flex-start;
   margin-top: 20px;
 }
 
 .contact-card {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
   text-decoration: none;
   color: #C9D1D9;
   flex: 1 1 160px;
