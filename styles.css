@@ -228,6 +228,13 @@ nav {
     justify-content: center;
     margin-top: 12px;
   }
+  .theme-dropdown {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 nav a {
@@ -616,7 +623,7 @@ body.light-mode .contact-card {
 }
 
 body.light-mode .contact-card:hover {
-  box-shadow: 0 8px 20px rgba(9, 105, 218, 0.35);
+  transform: translateY(-5px);
 }
 
 body.light-mode .contact-label {
@@ -637,8 +644,7 @@ body.light-mode .contact-value {
 }
 
 .contact-card {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px;
   text-decoration: none;
   color: #C9D1D9;
   flex: 0 0 160px;
@@ -646,12 +652,11 @@ body.light-mode .contact-value {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .contact-card:hover {
   transform: translateY(-5px);
-  /*box-shadow: 0 4px 10px #58A6FF;*/
 }
 
 .contact-card img {
