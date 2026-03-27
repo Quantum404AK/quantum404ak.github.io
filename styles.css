@@ -292,7 +292,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .skill_tile {
@@ -304,7 +304,7 @@ h2 {
   border-radius: 8px;
   border: 2px solid #58A6FF;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 0 0 280px;
+  flex: 1 1 280px;
   box-sizing: border-box;
 }
 
@@ -551,16 +551,16 @@ body.light-mode .contact-value {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 20px;
 }
 
 .contact-card {
-        padding-top: 15px;
-        padding-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   text-decoration: none;
   color: #C9D1D9;
-  flex: 1 1 160px;
+  flex: 0 0 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
