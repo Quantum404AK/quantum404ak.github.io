@@ -24,11 +24,17 @@
         </span></a>
       </div>
       <nav>
-        <select id="theme-select" class="theme-select" title="Select colour theme">
-          <option value="dark">🌙 Dark</option>
-          <option value="light">☀️ Light</option>
-          <option value="system">💻 System</option>
-        </select>
+        <div id="theme-dropdown" class="theme-dropdown" tabindex="0" title="Select colour theme">
+          <div class="theme-dd-selected">
+            <span id="theme-dd-label">🌙 Dark</span>
+            <span class="theme-dd-arrow">▾</span>
+          </div>
+          <ul class="theme-dd-menu">
+            <li data-value="dark">🌙 Dark</li>
+            <li data-value="light">☀️ Light</li>
+            <li data-value="system">💻 System</li>
+          </ul>
+        </div>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>

@@ -413,35 +413,113 @@ footer {
 }
 
 /* Theme dropdown */
-.theme-select {
+.theme-dropdown {
+  position: relative;
+  margin-right: 14px;
+  flex-shrink: 0;
+  user-select: none;
+  cursor: pointer;
+}
+
+.theme-dd-selected {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
   background: #0D1117;
   color: #C9D1D9;
   border: 1.5px solid #58A6FF;
-  border-radius: 6px;
-  padding: 4px 8px;
+  border-radius: 999px;
   font-size: 15px;
   font-family: inherit;
-  cursor: pointer;
-  margin-right: 12px;
-  transition: border-color 0.3s ease;
-  flex-shrink: 0;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: border-color 0.25s ease, background 0.25s ease;
 }
 
-.theme-select:hover,
-.theme-select:focus {
+.theme-dropdown:hover .theme-dd-selected,
+.theme-dropdown:focus .theme-dd-selected {
   border-color: #F78166;
   outline: none;
 }
 
-body.light-mode .theme-select {
+.theme-dd-arrow {
+  font-size: 11px;
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.theme-dropdown.open .theme-dd-arrow {
+  transform: rotate(180deg);
+}
+
+.theme-dd-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #161B22;
+  border: 1.5px solid #58A6FF;
+  border-radius: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  min-width: 140px;
+  z-index: 200;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.theme-dropdown.open .theme-dd-menu {
+  display: block;
+}
+
+.theme-dd-menu li {
+  padding: 9px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+  color: #C9D1D9;
+}
+
+.theme-dd-menu li:hover {
+  background: #21262D;
+}
+
+.theme-dd-menu li.active {
+  font-weight: 700;
+  color: #58A6FF;
+}
+
+/* Light mode */
+body.light-mode .theme-dd-selected {
   background: #F6F8FA;
   color: #24292F;
   border-color: #0969DA;
 }
 
-body.light-mode .theme-select:hover,
-body.light-mode .theme-select:focus {
+body.light-mode .theme-dropdown:hover .theme-dd-selected,
+body.light-mode .theme-dropdown:focus .theme-dd-selected {
   border-color: #CF222E;
+}
+
+body.light-mode .theme-dd-menu {
+  background: #FFFFFF;
+  border-color: #0969DA;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode .theme-dd-menu li {
+  color: #24292F;
+}
+
+body.light-mode .theme-dd-menu li:hover {
+  background: #EAF2FF;
+}
+
+body.light-mode .theme-dd-menu li.active {
+  color: #0969DA;
 }
 
 /* =====================
