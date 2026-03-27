@@ -13,6 +13,19 @@
     document.cookie = name + '=' + value + '; expires=' + expires + '; path=/';
   }
 
+  function swapContactImages(mode) {
+    var section = document.getElementById('contact');
+    if (!section) return;
+    var images = section.querySelectorAll('img');
+    images.forEach(function (img) {
+      if (mode === 'light') {
+        img.src = img.src.replace('_dark.', '_light.');
+      } else {
+        img.src = img.src.replace('_light.', '_dark.');
+      }
+    });
+  }
+
   function applyTheme(mode) {
     var btn = document.getElementById('theme-toggle');
     if (mode === 'light') {
@@ -22,6 +35,7 @@
       document.body.classList.remove('light-mode');
       if (btn) btn.textContent = '🌙';
     }
+    swapContactImages(mode);
   }
 
   var saved = getCookie('theme');

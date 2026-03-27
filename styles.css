@@ -292,7 +292,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .skill_tile {
@@ -304,7 +304,7 @@ h2 {
   border-radius: 8px;
   border: 2px solid #58A6FF;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 1 1 280px;
+  flex: 0 0 280px;
   box-sizing: border-box;
 }
 
