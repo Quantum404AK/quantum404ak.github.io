@@ -413,6 +413,139 @@ footer {
   border-top: 1px solid #30363D;
 }
 
+/* Theme toggle button */
+.theme-btn {
+  background: none;
+  border: 1.5px solid #58A6FF;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  color: inherit;
+  flex-shrink: 0;
+  line-height: 1;
+  padding: 0;
+}
+
+.theme-btn:hover {
+  border-color: #F78166;
+  transform: scale(1.15);
+}
+
+/* =====================
+   Light mode overrides
+   ===================== */
+body.light-mode {
+  background: #F6F8FA;
+  color: #24292F;
+}
+
+body.light-mode header {
+  background: #FFFFFF;
+  color: #24292F;
+  border-bottom: 1px solid #D0D7DE;
+}
+
+body.light-mode nav a {
+  color: #0969DA;
+}
+
+body.light-mode nav a:hover {
+  color: #CF222E;
+}
+
+body.light-mode .theme-btn {
+  border-color: #0969DA;
+}
+
+body.light-mode .theme-btn:hover {
+  border-color: #CF222E;
+}
+
+body.light-mode h2 {
+  color: #0969DA;
+  border-bottom-color: #D0D7DE;
+}
+
+body.light-mode .skill_tile {
+  background: #FFFFFF;
+  color: #24292F;
+  border-color: #0969DA;
+}
+
+body.light-mode .skill_tile:hover {
+  box-shadow: 0 8px 20px rgba(9, 105, 218, 0.35);
+}
+
+body.light-mode .skill_tile h3 {
+  color: #CF222E;
+}
+
+body.light-mode .project {
+  background: #FFFFFF;
+  color: #24292F;
+  border-color: #0969DA;
+}
+
+body.light-mode .project:hover {
+  box-shadow: 0 8px 20px rgba(9, 105, 218, 0.35);
+}
+
+body.light-mode .project h3 {
+  color: #CF222E;
+}
+
+body.light-mode .project p {
+  color: #24292F;
+}
+
+body.light-mode .project a {
+  color: #0969DA;
+}
+
+body.light-mode .project a:hover {
+  color: #CF222E;
+}
+
+body.light-mode .btn {
+  background: #0969DA;
+}
+
+body.light-mode .btn:hover {
+  background: #0550AE;
+}
+
+body.light-mode footer {
+  background: #FFFFFF;
+  color: #57606A;
+  border-top-color: #D0D7DE;
+}
+
+body.light-mode .contact-card {
+  background: #FFFFFF;
+  color: #24292F;
+  border-color: #0969DA;
+}
+
+body.light-mode .contact-card:hover {
+  box-shadow: 0 8px 20px rgba(9, 105, 218, 0.35);
+  border-color: #CF222E;
+}
+
+body.light-mode .contact-label {
+  color: #CF222E;
+}
+
+body.light-mode .contact-value {
+  color: #57606A;
+}
+
 /* Contact */
 .contact-grid {
   display: flex;
@@ -423,8 +556,8 @@ footer {
 }
 
 .contact-card {
-	padding-top: 15px;
-	padding-bottom: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
   text-decoration: none;
   color: #C9D1D9;
   flex: 1 1 160px;
@@ -441,7 +574,7 @@ footer {
 }
 
 .contact-card img {
-	padding-bottom: 10px;
+        padding-bottom: 10px;
 }
 
 .contact-label {
