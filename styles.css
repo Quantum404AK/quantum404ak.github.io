@@ -310,7 +310,6 @@ h2 {
 
 .skill_tile:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px #58A6FF;
 }
 
 .skill_tile h3 {
@@ -410,29 +409,36 @@ footer {
   border-top: 1px solid #30363D;
 }
 
-/* Theme toggle button */
-.theme-btn {
-  background: none;
+/* Theme dropdown */
+.theme-select {
+  background: #0D1117;
+  color: #C9D1D9;
   border: 1.5px solid #58A6FF;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 15px;
+  font-family: inherit;
   cursor: pointer;
-  font-size: 16px;
   margin-left: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-  color: inherit;
+  transition: border-color 0.3s ease;
   flex-shrink: 0;
-  line-height: 1;
-  padding: 0;
 }
 
-.theme-btn:hover {
+.theme-select:hover,
+.theme-select:focus {
   border-color: #F78166;
-  transform: scale(1.15);
+  outline: none;
+}
+
+body.light-mode .theme-select {
+  background: #F6F8FA;
+  color: #24292F;
+  border-color: #0969DA;
+}
+
+body.light-mode .theme-select:hover,
+body.light-mode .theme-select:focus {
+  border-color: #CF222E;
 }
 
 /* =====================
@@ -477,7 +483,7 @@ body.light-mode .skill_tile {
 }
 
 body.light-mode .skill_tile:hover {
-  box-shadow: 0 8px 20px rgba(9, 105, 218, 0.35);
+  /* no shadow */
 }
 
 body.light-mode .skill_tile h3 {

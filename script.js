@@ -13,44 +13,63 @@
     document.cookie = name + '=' + value + '; expires=' + expires + '; path=/';
   }
 
-  function swapContactImages(mode) {
+  function swapContactImages(isDark) {
     var section = document.getElementById('contact');
     if (!section) return;
     var images = section.querySelectorAll('img');
     images.forEach(function (img) {
-      if (mode === 'light') {
-        img.src = img.src.replace('_dark.', '_light.');
-      } else {
+      if (isDark) {
         img.src = img.src.replace('_light.', '_dark.');
+      } else {
+        img.src = img.src.replace('_dark.', '_light.');
       }
     });
   }
 
-  function applyTheme(mode) {
-    var btn = document.getElementById('theme-toggle');
-    if (mode === 'light') {
-      document.body.classList.add('light-mode');
-      if (btn) btn.textContent = '☀️';
-    } else {
+  /* Apply 'light-mode' class based on a boolean */
+  function applyDark(isDark) {
+    if (isDark) {
       document.body.classList.remove('light-mode');
-      if (btn) btn.textContent = '🌙';
+    } else {
+      document.body.classList.add('light-mode');
     }
-    swapContactImages(mode);
+    swapContactImages(isDark);
   }
 
-  var saved = getCookie('theme');
-  var currentTheme = saved || 'dark';
+  /* Resolve the effective dark/light from the stored preference */
+  function resolveTheme(pref) {
+    if (pref === 'light') return false;
+    if (pref === 'dark')  return true;
+    /* system: follow OS preference */
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  var systemQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  var saved = getCookie('theme') || 'dark';
 
   document.addEventListener('DOMContentLoaded', function () {
-    applyTheme(currentTheme);
+    var select = document.getElementById('theme-select');
 
-    var btn = document.getElementById('theme-toggle');
-    if (btn) {
-      btn.addEventListener('click', function () {
-        var isLight = document.body.classList.contains('light-mode');
-        var newTheme = isLight ? 'dark' : 'light';
-        applyTheme(newTheme);
-        setCookie('theme', newTheme, 365);
+    /* Set dropdown to saved preference */
+    if (select) select.value = saved;
+
+    /* Apply on load */
+    applyDark(resolveTheme(saved));
+
+    /* Listen for OS-level changes when preference is 'system' */
+    systemQuery.addEventListener('change', function () {
+      var current = getCookie('theme') || 'dark';
+      if (current === 'system') {
+        applyDark(systemQuery.matches);
+      }
+    });
+
+    /* React to dropdown changes */
+    if (select) {
+      select.addEventListener('change', function () {
+        var newPref = select.value;
+        setCookie('theme', newPref, 365);
+        applyDark(resolveTheme(newPref));
       });
     }
   });
