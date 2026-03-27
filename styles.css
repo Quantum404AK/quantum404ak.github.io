@@ -383,9 +383,6 @@ h2 {
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-}
-
-.btn {
   background: #0077cc;
   color: #fff;
 }
@@ -528,14 +525,11 @@ body.light-mode footer {
 }
 
 body.light-mode .contact-card {
-  background: #FFFFFF;
   color: #24292F;
-  border-color: #0969DA;
 }
 
 body.light-mode .contact-card:hover {
   box-shadow: 0 8px 20px rgba(9, 105, 218, 0.35);
-  border-color: #CF222E;
 }
 
 body.light-mode .contact-label {
